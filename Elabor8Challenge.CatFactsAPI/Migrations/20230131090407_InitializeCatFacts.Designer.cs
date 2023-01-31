@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elabor8Challenge.CatFactsAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230131082746_InitializeCatFacts")]
+    [Migration("20230131090407_InitializeCatFacts")]
     partial class InitializeCatFacts
     {
         /// <inheritdoc />
@@ -73,13 +73,13 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                         new
                         {
                             Id = "58e007480aac31001185ecef",
-                            CreatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            CreatedAt = new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106),
                             Deleted = false,
                             Source = 0,
                             StatusId = "58e007480aac31001185ecef",
                             Text = "The frequency of a domestic cat's purr is the same at which muscles and bones repair themselves.",
                             Type = 0,
-                            UpdatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            UpdatedAt = new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106),
                             Upvotes = 12,
                             Used = true,
                             UserId = "58e007480aac31001185ecef",
@@ -88,16 +88,31 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                         new
                         {
                             Id = "58e007480aac31001185ecea",
-                            CreatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            CreatedAt = new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106),
                             Deleted = false,
                             Source = 0,
                             StatusId = "58e007480aac31001185ecea",
                             Text = "By the time a cat is 9 years old, it will only have been awake for three years of its life.",
                             Type = 0,
-                            UpdatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            UpdatedAt = new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106),
                             Upvotes = 6,
                             Used = true,
                             UserId = "58e007480aac31001185ecef",
+                            V = 2
+                        },
+                        new
+                        {
+                            Id = "58e007480aac31001185eceb",
+                            CreatedAt = new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106),
+                            Deleted = false,
+                            Source = 0,
+                            StatusId = "58e007480aac31001185eceb",
+                            Text = "Cats love lasagna and hate mondays.",
+                            Type = 0,
+                            UpdatedAt = new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106),
+                            Upvotes = 19,
+                            Used = true,
+                            UserId = "58e007480aac31001185ecea",
                             V = 2
                         });
                 });
@@ -129,6 +144,12 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                             Id = "58e007480aac31001185ecea",
                             SentCount = 7,
                             Verified = true
+                        },
+                        new
+                        {
+                            Id = "58e007480aac31001185eceb",
+                            SentCount = 1,
+                            Verified = true
                         });
                 });
 
@@ -153,6 +174,12 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                             Id = "58e007480aac31001185ecef",
                             First = "Jon",
                             Last = "Arbuckle"
+                        },
+                        new
+                        {
+                            Id = "58e007480aac31001185ecea",
+                            First = "Liz",
+                            Last = "Wilson"
                         });
                 });
 
@@ -175,6 +202,11 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                         {
                             Id = "58e007480aac31001185ecef",
                             NameId = "58e007480aac31001185ecef"
+                        },
+                        new
+                        {
+                            Id = "58e007480aac31001185ecea",
+                            NameId = "58e007480aac31001185ecea"
                         });
                 });
 

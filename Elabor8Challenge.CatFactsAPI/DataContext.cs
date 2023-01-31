@@ -28,10 +28,23 @@ namespace Elabor8Challenge.CatFactsAPI
                 Last = "Arbuckle"
             };
 
+            var name2 = new Name
+            {
+                Id = "58e007480aac31001185ecea",
+                First = "Liz",
+                Last = "Wilson"
+            };
+
             var user1 = new User
             {
                 Id = "58e007480aac31001185ecef",
                 NameId = "58e007480aac31001185ecef",
+            };
+
+            var user2 = new User
+            {
+                Id = "58e007480aac31001185ecea",
+                NameId = "58e007480aac31001185ecea",
             };
 
             var factStatus1 = new FactStatus
@@ -48,22 +61,32 @@ namespace Elabor8Challenge.CatFactsAPI
                 Verified = true,
             };
 
+            var factStatus3 = new FactStatus
+            {
+                Id = "58e007480aac31001185eceb",
+                SentCount = 1,
+                Verified = true,
+            };
+
             var createdDate = DateTime.Now;
 
             modelBuilder.Entity<Name>(b =>
             {
                 b.HasData(name1);
+                b.HasData(name2);
             });
 
             modelBuilder.Entity<User>(b =>
             {
                 b.HasData(user1);
+                b.HasData(user2);
             });
 
             modelBuilder.Entity<FactStatus>(b =>
             {
                 b.HasData(factStatus1);
                 b.HasData(factStatus2);
+                b.HasData(factStatus3);
             });
 
             modelBuilder.Entity<CatFact>(b =>
@@ -99,6 +122,22 @@ namespace Elabor8Challenge.CatFactsAPI
                     V = 2,
                     UserId = user1.Id,
                     StatusId = factStatus2.Id
+                });
+                b.HasData(new CatFact
+                {
+                    Id = "58e007480aac31001185eceb",
+                    Text = "Cats love lasagna and hate mondays.",
+                    CreatedAt = createdDate,
+                    UpdatedAt = createdDate,
+                    Deleted = false,
+                    Source = FactSourceEnum.User,
+                    Type = FactTypeEnum.Cat,
+                    Upvotes = 19,
+                    Used = true,
+                    UserUpvoted = null,
+                    V = 2,
+                    UserId = user2.Id,
+                    StatusId = factStatus3.Id
                 });
             });
         }

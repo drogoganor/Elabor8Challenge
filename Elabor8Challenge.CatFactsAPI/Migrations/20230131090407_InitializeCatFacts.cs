@@ -95,26 +95,36 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                 values: new object[,]
                 {
                     { "58e007480aac31001185ecea", 7, true },
+                    { "58e007480aac31001185eceb", 1, true },
                     { "58e007480aac31001185ecef", 2, false }
                 });
 
             migrationBuilder.InsertData(
                 table: "Names",
                 columns: new[] { "Id", "First", "Last" },
-                values: new object[] { "58e007480aac31001185ecef", "Jon", "Arbuckle" });
+                values: new object[,]
+                {
+                    { "58e007480aac31001185ecea", "Liz", "Wilson" },
+                    { "58e007480aac31001185ecef", "Jon", "Arbuckle" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "NameId" },
-                values: new object[] { "58e007480aac31001185ecef", "58e007480aac31001185ecef" });
+                values: new object[,]
+                {
+                    { "58e007480aac31001185ecea", "58e007480aac31001185ecea" },
+                    { "58e007480aac31001185ecef", "58e007480aac31001185ecef" }
+                });
 
             migrationBuilder.InsertData(
                 table: "CatFacts",
                 columns: new[] { "Id", "CreatedAt", "Deleted", "Source", "StatusId", "Text", "Type", "UpdatedAt", "Upvotes", "Used", "UserId", "UserUpvoted", "V" },
                 values: new object[,]
                 {
-                    { "58e007480aac31001185ecea", new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150), false, 0, "58e007480aac31001185ecea", "By the time a cat is 9 years old, it will only have been awake for three years of its life.", 0, new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150), 6, true, "58e007480aac31001185ecef", null, 2 },
-                    { "58e007480aac31001185ecef", new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150), false, 0, "58e007480aac31001185ecef", "The frequency of a domestic cat's purr is the same at which muscles and bones repair themselves.", 0, new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150), 12, true, "58e007480aac31001185ecef", null, 0 }
+                    { "58e007480aac31001185ecea", new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106), false, 0, "58e007480aac31001185ecea", "By the time a cat is 9 years old, it will only have been awake for three years of its life.", 0, new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106), 6, true, "58e007480aac31001185ecef", null, 2 },
+                    { "58e007480aac31001185eceb", new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106), false, 0, "58e007480aac31001185eceb", "Cats love lasagna and hate mondays.", 0, new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106), 19, true, "58e007480aac31001185ecea", null, 2 },
+                    { "58e007480aac31001185ecef", new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106), false, 0, "58e007480aac31001185ecef", "The frequency of a domestic cat's purr is the same at which muscles and bones repair themselves.", 0, new DateTime(2023, 1, 31, 19, 4, 7, 867, DateTimeKind.Local).AddTicks(5106), 12, true, "58e007480aac31001185ecef", null, 0 }
                 });
 
             migrationBuilder.CreateIndex(
