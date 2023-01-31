@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elabor8Challenge.CatFactsAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230131063249_InitializeCatFacts")]
+    [Migration("20230131082746_InitializeCatFacts")]
     partial class InitializeCatFacts
     {
         /// <inheritdoc />
@@ -19,21 +19,6 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.2");
-
-            modelBuilder.Entity("CatFactUser", b =>
-                {
-                    b.Property<string>("UpvotedCatFactsId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UserUpvotedId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("UpvotedCatFactsId", "UserUpvotedId");
-
-                    b.HasIndex("UserUpvotedId");
-
-                    b.ToTable("CatFactUser");
-                });
 
             modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.CatFact", b =>
                 {
@@ -46,8 +31,8 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Source")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Source")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("StatusId")
                         .HasColumnType("TEXT");
@@ -55,8 +40,8 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                     b.Property<string>("Text")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Type")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Type")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("TEXT");
@@ -67,6 +52,12 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                     b.Property<bool>("Used")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserUpvoted")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("V")
                         .HasColumnType("INTEGER");
 
@@ -74,7 +65,41 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
 
                     b.HasIndex("StatusId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("CatFacts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "58e007480aac31001185ecef",
+                            CreatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            Deleted = false,
+                            Source = 0,
+                            StatusId = "58e007480aac31001185ecef",
+                            Text = "The frequency of a domestic cat's purr is the same at which muscles and bones repair themselves.",
+                            Type = 0,
+                            UpdatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            Upvotes = 12,
+                            Used = true,
+                            UserId = "58e007480aac31001185ecef",
+                            V = 0
+                        },
+                        new
+                        {
+                            Id = "58e007480aac31001185ecea",
+                            CreatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            Deleted = false,
+                            Source = 0,
+                            StatusId = "58e007480aac31001185ecea",
+                            Text = "By the time a cat is 9 years old, it will only have been awake for three years of its life.",
+                            Type = 0,
+                            UpdatedAt = new DateTime(2023, 1, 31, 18, 27, 46, 60, DateTimeKind.Local).AddTicks(8150),
+                            Upvotes = 6,
+                            Used = true,
+                            UserId = "58e007480aac31001185ecef",
+                            V = 2
+                        });
                 });
 
             modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.FactStatus", b =>
@@ -91,6 +116,20 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("FactStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "58e007480aac31001185ecef",
+                            SentCount = 2,
+                            Verified = false
+                        },
+                        new
+                        {
+                            Id = "58e007480aac31001185ecea",
+                            SentCount = 7,
+                            Verified = true
+                        });
                 });
 
             modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.Name", b =>
@@ -107,6 +146,14 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Names");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "58e007480aac31001185ecef",
+                            First = "Jon",
+                            Last = "Arbuckle"
+                        });
                 });
 
             modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.User", b =>
@@ -122,30 +169,28 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                     b.HasIndex("NameId");
 
                     b.ToTable("Users");
-                });
 
-            modelBuilder.Entity("CatFactUser", b =>
-                {
-                    b.HasOne("Elabor8Challenge.CatFactsAPI.Model.CatFact", null)
-                        .WithMany()
-                        .HasForeignKey("UpvotedCatFactsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Elabor8Challenge.CatFactsAPI.Model.User", null)
-                        .WithMany()
-                        .HasForeignKey("UserUpvotedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasData(
+                        new
+                        {
+                            Id = "58e007480aac31001185ecef",
+                            NameId = "58e007480aac31001185ecef"
+                        });
                 });
 
             modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.CatFact", b =>
                 {
                     b.HasOne("Elabor8Challenge.CatFactsAPI.Model.FactStatus", "Status")
-                        .WithMany("Facts")
+                        .WithMany()
                         .HasForeignKey("StatusId");
 
+                    b.HasOne("Elabor8Challenge.CatFactsAPI.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Status");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.User", b =>
@@ -155,11 +200,6 @@ namespace Elabor8Challenge.CatFactsAPI.Migrations
                         .HasForeignKey("NameId");
 
                     b.Navigation("Name");
-                });
-
-            modelBuilder.Entity("Elabor8Challenge.CatFactsAPI.Model.FactStatus", b =>
-                {
-                    b.Navigation("Facts");
                 });
 #pragma warning restore 612, 618
         }
