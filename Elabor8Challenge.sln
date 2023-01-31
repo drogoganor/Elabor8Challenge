@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elabor8Challenge", "Elabor8Challenge\Elabor8Challenge.csproj", "{D5E35B85-66DF-409E-AB3B-246446496889}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5E35B85-66DF-409E-AB3B-246446496889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E35B85-66DF-409E-AB3B-246446496889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E35B85-66DF-409E-AB3B-246446496889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E35B85-66DF-409E-AB3B-246446496889}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BF52718-4324-4CB4-A1CC-DC362F6BEE76}
+	EndGlobalSection
+EndGlobal
