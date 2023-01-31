@@ -1,0 +1,16 @@
+﻿{
+  "used": false,
+  "source": "user",
+  "type": "cat",
+  "deleted": false,
+  "_id": "5b4911940508220014ccfe94",
+  "updatedAt": "2020-01-02T02:02:48.612Z",
+  "createdAt": "2018-07-18T20:20:02.200Z",
+  "user": "5a9ac18c7478810ea6c06381",
+  "text": "By the time a cat is 9 years old, it will only By the time a cat is 9 years old, it will only have been awake for three years of its life.",
+  "__v": 0,
+  "status": {
+    "verified": true,
+    "sentCount": 1
+  }
+}

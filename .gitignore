@@ -1,2 +1,5 @@
 .vs/
-Elabor8Challenge/obj/
+Elabor8Challenge.CatFactsAPI/bin/
+Elabor8Challenge.CatFactsAPI/obj/
+Elabor8Challenge.CatFactsWeb/bin/
+Elabor8Challenge.CatFactsWeb/obj/
